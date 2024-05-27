@@ -1,6 +1,7 @@
 <script>
     export let data ;
-    // console.log(data.json())
+
+ 
   </script>
 
   <table>
@@ -16,16 +17,14 @@
     <tbody>
     
     {#each data.fixtures as fixture}
-        <tr>
+        <tr on:click={console.log(fixture.id)}>
             <td>{fixture.game_datetime}</td>
             <td>{fixture.opposition}</td>
             <td>{fixture.field}</td>
             <td>{fixture.score}</td>
             <td>{fixture.result}</td>
         </tr>
-        
     {/each}
-    {console.log(data.fixtures)}
   </tbody>
     </table>
 

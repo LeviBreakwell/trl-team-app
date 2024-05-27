@@ -1,13 +1,15 @@
+
+
 import { json } from '@sveltejs/kit';
 
-export async function load ({ fetch }) {
+export async function load ({ fetch,params }) {
     await new Promise(resolve => setTimeout(resolve,1000))
-
-    const res = await fetch('/api/fixtures')
+    const id = params.id
+    const res = await fetch(`/api/player_tries/${id}`)
     const { data }  =  await res.json()
     if (res.ok) {
         return {
-            fixtures: data
+            player_tries: data
         }
     }
 

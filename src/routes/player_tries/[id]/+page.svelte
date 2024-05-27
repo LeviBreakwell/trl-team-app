@@ -3,12 +3,15 @@
   </script>
 
   <table>
+    <thead>
     <tr>
         <th>player</th>
         <th>game</th>
         <th>tries</th>
         <th>played?</th>
     </tr>
+    </thead>
+    <tbody>
     {#each data.player_tries as player_try}
         <tr>
             <td>{player_try.player_id}</td>
@@ -16,8 +19,8 @@
             <td>{player_try.tries}</td>
             <td>{player_try.appearance}</td>
         </tr>
-        {console.log(data)}
     {/each}
+  </tbody>
     </table>
 
 <style>
@@ -29,13 +32,11 @@
   font-variation-settings:
     "wdth" 100;
 }
-
-tr:nth-child(even) {
-  background-color: #D6EEEE;
+thead {
+  background-color: #383838;
 }
-tr {
-    padding:1px;
-    margin: 1px;
-    border: 5px solid #000000;
+
+tbody {
+  background-color: #242424;
 }
 </style>
