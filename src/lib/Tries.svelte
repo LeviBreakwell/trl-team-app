@@ -12,7 +12,7 @@
     </tr>
     </thead>
     <tbody>
-    {#each data.player_tries as player_try}
+    {#each $data.player_tries as player_try}
         <tr>
             <td>{player_try.player_id}</td>
             <td>{player_try.game_id}</td>
